@@ -15,7 +15,7 @@ class CSVReadTest {
 
         List<People> people = CSVRead.readPeopleFromCSV(csvFilePath, separator);
 
-        // Проверяем, что список не пустой
+        // Проверяем список на пустоту
         assertNotNull(people);
         assertFalse(people.isEmpty());
 

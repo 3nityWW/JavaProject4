@@ -1,13 +1,13 @@
 package com.example;
 
 /**
- * Класс, представляющий подразделение.
+ * Класс подразделения.
  */
 public class Division {
     private static int nextId = 1; // Генератор ID
 
     private int id;
-    private String code; // Код подразделения (одна буква)
+    private String code; // Код подразделения
 
     public Division(String code) {
         this.id = nextId++;

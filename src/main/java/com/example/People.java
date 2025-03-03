@@ -3,7 +3,7 @@ package com.example;
 import java.time.LocalDate;
 
 /**
- * Класс, представляющий человека.
+ * Класс человека.
  */
 public class People {
     private int id;

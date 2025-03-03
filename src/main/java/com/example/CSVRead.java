@@ -19,12 +19,12 @@ import java.util.List;
 public class CSVRead {
 
     public static void main(String[] args) {
-        String csvFilePath = "src/main/resources/foreign_names.csv"; // Путь к файлу
-        char separator = ';'; // Разделитель в CSV-файле
+        String csvFilePath = "src/main/resources/foreign_names.csv"; // Путь
+        char separator = ';'; // Разделитель
 
         List<People> people = readPeopleFromCSV(csvFilePath, separator);
 
-        // Выводим результат
+        // Результат
         for (People person : people) {
             System.out.println(person);
         }
@@ -42,7 +42,7 @@ public class CSVRead {
 
         try (CSVReader reader = new CSVReaderBuilder(new FileReader(csvFilePath))
                 .withCSVParser(new CSVParserBuilder()
-                        .withSeparator(separator) // Указываем разделитель
+                        .withSeparator(separator) // Разделитель
                         .build())
                 .build()) {
 
@@ -52,12 +52,12 @@ public class CSVRead {
                 int id = Integer.parseInt(nextLine[0]);
                 String name = nextLine[1];
                 String gender = nextLine[2];
-                LocalDate birthDate = LocalDate.parse(nextLine[3], DateTimeFormatter.ofPattern("dd.MM.yyyy")); // BirthDate на 4-м месте
-                String divisionCode = nextLine[4]; // Division на 5-м месте (одна буква)
+                LocalDate birthDate = LocalDate.parse(nextLine[3], DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+                String divisionCode = nextLine[4];
                 double salary = Double.parseDouble(nextLine[5]);
 
                 // Создаем объекты
-                Division division = new Division(divisionCode); // Передаем код подразделения
+                Division division = new Division(divisionCode);
                 People person = new People(id, name, gender, division, salary, birthDate);
 
                 // Добавляем в список
